@@ -173,11 +173,8 @@ Wire Wire Line
 	6300 3550 5950 3550
 Wire Wire Line
 	5950 2550 5600 2550
-Connection ~ 5950 2550
 Wire Wire Line
 	5600 2550 5600 2950
-Wire Wire Line
-	6300 2550 5950 2550
 $Comp
 L Device:C_Small C1
 U 1 1 617BBB08
@@ -380,4 +377,51 @@ Wire Notes Line
 	6950 5300 4650 5300
 Wire Wire Line
 	6700 4350 7200 4350
+Wire Wire Line
+	5950 2550 6300 2550
+Connection ~ 5950 2550
+$Comp
+L Mechanical:MountingHole H2
+U 1 1 618A6908
+P 4350 5200
+F 0 "H2" H 4450 5200 50  0001 L CNN
+F 1 "MountingHole" H 4450 5155 50  0001 L CNN
+F 2 "MountingHole:MountingHole_3.2mm_M3" H 4350 5200 50  0001 C CNN
+F 3 "~" H 4350 5200 50  0001 C CNN
+	1    4350 5200
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole H1
+U 1 1 618A8867
+P 4350 2700
+F 0 "H1" H 4450 2700 50  0001 L CNN
+F 1 "MountingHole" H 4450 2655 50  0001 L CNN
+F 2 "MountingHole:MountingHole_3.2mm_M3" H 4350 2700 50  0001 C CNN
+F 3 "~" H 4350 2700 50  0001 C CNN
+	1    4350 2700
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole H3
+U 1 1 618A8B98
+P 7150 2700
+F 0 "H3" H 7250 2700 50  0001 L CNN
+F 1 "MountingHole" H 7250 2655 50  0001 L CNN
+F 2 "MountingHole:MountingHole_3.2mm_M3" H 7150 2700 50  0001 C CNN
+F 3 "~" H 7150 2700 50  0001 C CNN
+	1    7150 2700
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole H4
+U 1 1 618A904E
+P 7150 5200
+F 0 "H4" H 7250 5200 50  0001 L CNN
+F 1 "MountingHole" H 7250 5155 50  0001 L CNN
+F 2 "MountingHole:MountingHole_3.2mm_M3" H 7150 5200 50  0001 C CNN
+F 3 "~" H 7150 5200 50  0001 C CNN
+	1    7150 5200
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
