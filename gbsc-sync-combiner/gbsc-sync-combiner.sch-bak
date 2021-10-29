@@ -1,0 +1,383 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title "GBS-Control Sync Combiner"
+Date "2021-10-28"
+Rev "1.0"
+Comp "Softdrink"
+Comment1 ""
+Comment2 ""
+Comment3 "Uses existing GBS P9 and P11 JST-XH headers for power and video, respectively"
+Comment4 "Basic sync combiner circuit to allow RGBHV format VGA to be ingested as RGBS"
+$EndDescr
+$Comp
+L Connector:DB15_Female_HighDensity_MountingHoles J?
+U 1 1 617AF535
+P 3850 4150
+F 0 "J?" H 3850 5017 50  0000 C CNN
+F 1 "DB15_Female_HighDensity_MountingHoles" H 3850 4926 50  0000 C CNN
+F 2 "" H 2900 4550 50  0001 C CNN
+F 3 " ~" H 2900 4550 50  0001 C CNN
+	1    3850 4150
+	1    0    0    -1  
+$EndComp
+Text GLabel 3550 3750 0    50   Output ~ 0
+Red
+Text GLabel 3550 3950 0    50   Output ~ 0
+Green
+Text GLabel 3550 4150 0    50   Output ~ 0
+Blue
+$Comp
+L power:GND #PWR?
+U 1 1 617B16D7
+P 3050 5150
+F 0 "#PWR?" H 3050 4900 50  0001 C CNN
+F 1 "GND" H 3055 4977 50  0000 C CNN
+F 2 "" H 3050 5150 50  0001 C CNN
+F 3 "" H 3050 5150 50  0001 C CNN
+	1    3050 5150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3550 3650 3050 3650
+Wire Wire Line
+	3050 3650 3050 3850
+Wire Wire Line
+	3550 3850 3050 3850
+Connection ~ 3050 3850
+Wire Wire Line
+	3050 3850 3050 4050
+Wire Wire Line
+	3550 4050 3050 4050
+Connection ~ 3050 4050
+Wire Wire Line
+	3550 4450 3050 4450
+Connection ~ 3050 4450
+Wire Wire Line
+	3050 4450 3050 4550
+Wire Wire Line
+	3550 4550 3050 4550
+Connection ~ 3050 4550
+Wire Wire Line
+	3050 4050 3050 4450
+Wire Wire Line
+	3050 4550 3050 5150
+Wire Wire Line
+	3350 5150 3050 5150
+Connection ~ 3050 5150
+Wire Wire Line
+	3850 4850 3850 5150
+Wire Wire Line
+	3850 5150 3650 5150
+Text Notes 2850 5650 0    50   ~ 0
+Solder jumper to ground the shield.\nShould normally be closed. Rarely,\nsetups may benefit from opening it.
+Text Notes 4650 5500 0    50   ~ 0
+Sync combiner circuit adapted from TD-IO:\nhttps://github.com/tdaede/td-io
+NoConn ~ 3550 4350
+NoConn ~ 4150 3750
+NoConn ~ 4150 3950
+NoConn ~ 4150 4550
+$Comp
+L Device:R_Small R?
+U 1 1 617C3DD7
+P 4750 4000
+F 0 "R?" H 4691 3954 50  0000 R CNN
+F 1 "10k" H 4691 4045 50  0000 R CNN
+F 2 "" H 4750 4000 50  0001 C CNN
+F 3 "~" H 4750 4000 50  0001 C CNN
+	1    4750 4000
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:R_Small R?
+U 1 1 617C4DEA
+P 5050 4000
+F 0 "R?" H 4991 3954 50  0000 R CNN
+F 1 "10k" H 4991 4045 50  0000 R CNN
+F 2 "" H 5050 4000 50  0001 C CNN
+F 3 "~" H 5050 4000 50  0001 C CNN
+	1    5050 4000
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:+5V #PWR?
+U 1 1 617C58E2
+P 4900 3750
+F 0 "#PWR?" H 4900 3600 50  0001 C CNN
+F 1 "+5V" H 4915 3923 50  0000 C CNN
+F 2 "" H 4900 3750 50  0001 C CNN
+F 3 "" H 4900 3750 50  0001 C CNN
+	1    4900 3750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4750 4150 4750 4100
+Wire Wire Line
+	4750 3900 4750 3750
+Wire Wire Line
+	4750 3750 4900 3750
+Wire Wire Line
+	4900 3750 5050 3750
+Wire Wire Line
+	5050 3750 5050 3900
+Connection ~ 4900 3750
+Wire Wire Line
+	5050 4350 5050 4100
+$Comp
+L Jumper:SolderJumper_2_Bridged JP?
+U 1 1 617C9602
+P 3500 5150
+F 0 "JP?" H 3500 5355 50  0000 C CNN
+F 1 "SolderJumper_2_Bridged" H 3500 5264 50  0000 C CNN
+F 2 "" H 3500 5150 50  0001 C CNN
+F 3 "~" H 3500 5150 50  0001 C CNN
+	1    3500 5150
+	1    0    0    -1  
+$EndComp
+Text Label 4150 4150 0    50   ~ 0
+HSync
+Text Label 4150 4350 0    50   ~ 0
+VSync
+Wire Wire Line
+	5950 4450 5950 4100
+Wire Wire Line
+	6100 4450 5950 4450
+Wire Wire Line
+	5800 4250 6100 4250
+$Comp
+L power:+5V #PWR?
+U 1 1 617C1795
+P 5950 4100
+F 0 "#PWR?" H 5950 3950 50  0001 C CNN
+F 1 "+5V" H 5965 4273 50  0000 C CNN
+F 2 "" H 5950 4100 50  0001 C CNN
+F 3 "" H 5950 4100 50  0001 C CNN
+	1    5950 4100
+	1    0    0    -1  
+$EndComp
+NoConn ~ 6700 5000
+NoConn ~ 6100 5100
+NoConn ~ 6100 4900
+NoConn ~ 5800 4900
+NoConn ~ 5200 5000
+NoConn ~ 5200 4800
+Wire Wire Line
+	5950 3550 5600 3550
+Connection ~ 5950 3550
+Wire Wire Line
+	5600 3550 5600 3150
+Wire Wire Line
+	6300 3550 5950 3550
+Wire Wire Line
+	5950 2550 5600 2550
+Connection ~ 5950 2550
+Wire Wire Line
+	5600 2550 5600 2950
+Wire Wire Line
+	6300 2550 5950 2550
+$Comp
+L Device:C_Small C?
+U 1 1 617BBB08
+P 5600 3050
+F 0 "C?" H 5692 3096 50  0000 L CNN
+F 1 "0.1uF" H 5692 3005 50  0000 L CNN
+F 2 "" H 5600 3050 50  0001 C CNN
+F 3 "~" H 5600 3050 50  0001 C CNN
+	1    5600 3050
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+5V #PWR?
+U 1 1 617BB1EB
+P 5950 2550
+F 0 "#PWR?" H 5950 2400 50  0001 C CNN
+F 1 "+5V" H 5965 2723 50  0000 C CNN
+F 2 "" H 5950 2550 50  0001 C CNN
+F 3 "" H 5950 2550 50  0001 C CNN
+	1    5950 2550
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 617BAE1C
+P 5950 3550
+F 0 "#PWR?" H 5950 3300 50  0001 C CNN
+F 1 "GND" H 5955 3377 50  0000 C CNN
+F 2 "" H 5950 3550 50  0001 C CNN
+F 3 "" H 5950 3550 50  0001 C CNN
+	1    5950 3550
+	1    0    0    -1  
+$EndComp
+$Comp
+L 74xx:74LS86 U?
+U 5 1 617B8B9C
+P 6300 3050
+F 0 "U?" H 6530 3096 50  0000 L CNN
+F 1 "74LS86" H 6530 3005 50  0000 L CNN
+F 2 "" H 6300 3050 50  0001 C CNN
+F 3 "74xx/74ls86.pdf" H 6300 3050 50  0001 C CNN
+	5    6300 3050
+	1    0    0    -1  
+$EndComp
+$Comp
+L 74xx:74LS86 U?
+U 4 1 617B7787
+P 6400 5000
+F 0 "U?" H 6400 5325 50  0000 C CNN
+F 1 "74LS86" H 6400 5234 50  0000 C CNN
+F 2 "" H 6400 5000 50  0001 C CNN
+F 3 "74xx/74ls86.pdf" H 6400 5000 50  0001 C CNN
+	4    6400 5000
+	1    0    0    -1  
+$EndComp
+$Comp
+L 74xx:74LS86 U?
+U 3 1 617B57BB
+P 5500 4900
+F 0 "U?" H 5500 5225 50  0000 C CNN
+F 1 "74LS86" H 5500 5134 50  0000 C CNN
+F 2 "" H 5500 4900 50  0001 C CNN
+F 3 "74xx/74ls86.pdf" H 5500 4900 50  0001 C CNN
+	3    5500 4900
+	1    0    0    -1  
+$EndComp
+$Comp
+L 74xx:74LS86 U?
+U 2 1 617B48C5
+P 6400 4350
+F 0 "U?" H 6400 4675 50  0000 C CNN
+F 1 "74LS86" H 6400 4584 50  0000 C CNN
+F 2 "" H 6400 4350 50  0001 C CNN
+F 3 "74xx/74ls86.pdf" H 6400 4350 50  0001 C CNN
+	2    6400 4350
+	1    0    0    -1  
+$EndComp
+$Comp
+L 74xx:74LS86 U?
+U 1 1 617B3A20
+P 5500 4250
+F 0 "U?" H 5500 4575 50  0000 C CNN
+F 1 "74LS86" H 5500 4484 50  0000 C CNN
+F 2 "" H 5500 4250 50  0001 C CNN
+F 3 "74xx/74ls86.pdf" H 5500 4250 50  0001 C CNN
+	1    5500 4250
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x02 J?
+U 1 1 617E7B6B
+P 8000 3400
+F 0 "J?" H 8080 3392 50  0000 L CNN
+F 1 "JST-XH" H 8080 3301 50  0000 L CNN
+F 2 "" H 8000 3400 50  0001 C CNN
+F 3 "~" H 8000 3400 50  0001 C CNN
+	1    8000 3400
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+5V #PWR?
+U 1 1 617E835C
+P 7700 3400
+F 0 "#PWR?" H 7700 3250 50  0001 C CNN
+F 1 "+5V" H 7715 3573 50  0000 C CNN
+F 2 "" H 7700 3400 50  0001 C CNN
+F 3 "" H 7700 3400 50  0001 C CNN
+	1    7700 3400
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 617E8C2D
+P 7700 3500
+F 0 "#PWR?" H 7700 3250 50  0001 C CNN
+F 1 "GND" H 7705 3327 50  0000 C CNN
+F 2 "" H 7700 3500 50  0001 C CNN
+F 3 "" H 7700 3500 50  0001 C CNN
+	1    7700 3500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7800 3400 7700 3400
+Wire Wire Line
+	7800 3500 7700 3500
+$Comp
+L Connector_Generic:Conn_01x08 J?
+U 1 1 617E9E1B
+P 8000 4250
+F 0 "J?" H 8080 4242 50  0000 L CNN
+F 1 "JST-XH" H 8080 4151 50  0000 L CNN
+F 2 "" H 8000 4250 50  0001 C CNN
+F 3 "~" H 8000 4250 50  0001 C CNN
+	1    8000 4250
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 617EAD9D
+P 7550 3950
+F 0 "#PWR?" H 7550 3700 50  0001 C CNN
+F 1 "GND" H 7555 3777 50  0000 C CNN
+F 2 "" H 7550 3950 50  0001 C CNN
+F 3 "" H 7550 3950 50  0001 C CNN
+	1    7550 3950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7800 4050 7700 4050
+Wire Wire Line
+	7700 4050 7700 3950
+Wire Wire Line
+	7700 3950 7800 3950
+NoConn ~ 7800 4150
+NoConn ~ 7800 4250
+Wire Wire Line
+	7700 3950 7550 3950
+Connection ~ 7700 3950
+Text Label 6700 4350 0    50   ~ 0
+CSync
+Text GLabel 7800 4450 0    50   Output ~ 0
+Blue
+Text GLabel 7800 4550 0    50   Output ~ 0
+Green
+Text GLabel 7800 4650 0    50   Output ~ 0
+Red
+Wire Wire Line
+	7400 4350 7800 4350
+$Comp
+L Device:R_Small R?
+U 1 1 617F445A
+P 7300 4350
+F 0 "R?" V 7104 4350 50  0000 C CNN
+F 1 "0Ohm" V 7195 4350 50  0000 C CNN
+F 2 "" H 7300 4350 50  0001 C CNN
+F 3 "~" H 7300 4350 50  0001 C CNN
+	1    7300 4350
+	0    1    1    0   
+$EndComp
+Text Notes 7300 5150 0    50   ~ 0
+Not entirely sure what the GBS \nexpects as CSync input voltage.\nThis allows provision on the board \nfor an inline resistor if needed.
+NoConn ~ 3550 4250
+Wire Wire Line
+	4150 4150 4750 4150
+Wire Wire Line
+	4750 4150 5200 4150
+Connection ~ 4750 4150
+Wire Wire Line
+	4150 4350 5050 4350
+Wire Wire Line
+	5050 4350 5200 4350
+Connection ~ 5050 4350
+Wire Notes Line
+	4650 5300 4650 2250
+Wire Notes Line
+	4650 2250 6950 2250
+Wire Notes Line
+	6950 2250 6950 5300
+Wire Notes Line
+	6950 5300 4650 5300
+Wire Wire Line
+	6700 4350 7200 4350
+$EndSCHEMATC
