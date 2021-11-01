@@ -277,72 +277,64 @@ $EndComp
 $Comp
 L power:+5V #PWR0106
 U 1 1 617E835C
-P 7700 3400
-F 0 "#PWR0106" H 7700 3250 50  0001 C CNN
-F 1 "+5V" H 7715 3573 50  0000 C CNN
-F 2 "" H 7700 3400 50  0001 C CNN
-F 3 "" H 7700 3400 50  0001 C CNN
-	1    7700 3400
+P 7600 3700
+F 0 "#PWR0106" H 7600 3550 50  0001 C CNN
+F 1 "+5V" H 7615 3873 50  0000 C CNN
+F 2 "" H 7600 3700 50  0001 C CNN
+F 3 "" H 7600 3700 50  0001 C CNN
+	1    7600 3700
 	1    0    0    -1  
 $EndComp
 $Comp
 L power:GND #PWR0107
 U 1 1 617E8C2D
-P 7700 3500
-F 0 "#PWR0107" H 7700 3250 50  0001 C CNN
-F 1 "GND" H 7705 3327 50  0000 C CNN
-F 2 "" H 7700 3500 50  0001 C CNN
-F 3 "" H 7700 3500 50  0001 C CNN
-	1    7700 3500
+P 7600 3200
+F 0 "#PWR0107" H 7600 2950 50  0001 C CNN
+F 1 "GND" H 7605 3027 50  0000 C CNN
+F 2 "" H 7600 3200 50  0001 C CNN
+F 3 "" H 7600 3200 50  0001 C CNN
+	1    7600 3200
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	7800 3400 7700 3400
-Wire Wire Line
-	7800 3500 7700 3500
 $Comp
 L Connector_Generic:Conn_01x08 J3
 U 1 1 617E9E1B
-P 8000 4250
-F 0 "J3" H 8080 4242 50  0000 L CNN
-F 1 "JST-XH" H 8080 4151 50  0000 L CNN
-F 2 "Connector_JST:JST_XH_B8B-XH-A_1x08_P2.50mm_Vertical" H 8000 4250 50  0001 C CNN
-F 3 "~" H 8000 4250 50  0001 C CNN
-	1    8000 4250
+P 8000 4350
+F 0 "J3" H 8080 4342 50  0000 L CNN
+F 1 "JST-XH" H 8080 4251 50  0000 L CNN
+F 2 "Connector_JST:JST_XH_B8B-XH-A_1x08_P2.50mm_Vertical" H 8000 4350 50  0001 C CNN
+F 3 "~" H 8000 4350 50  0001 C CNN
+	1    8000 4350
 	1    0    0    -1  
 $EndComp
 $Comp
 L power:GND #PWR0108
 U 1 1 617EAD9D
-P 7550 3950
-F 0 "#PWR0108" H 7550 3700 50  0001 C CNN
-F 1 "GND" H 7555 3777 50  0000 C CNN
-F 2 "" H 7550 3950 50  0001 C CNN
-F 3 "" H 7550 3950 50  0001 C CNN
-	1    7550 3950
+P 7550 4650
+F 0 "#PWR0108" H 7550 4400 50  0001 C CNN
+F 1 "GND" H 7555 4477 50  0000 C CNN
+F 2 "" H 7550 4650 50  0001 C CNN
+F 3 "" H 7550 4650 50  0001 C CNN
+	1    7550 4650
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	7800 4050 7700 4050
+	7800 4750 7700 4750
 Wire Wire Line
-	7700 4050 7700 3950
+	7700 4750 7700 4650
 Wire Wire Line
-	7700 3950 7800 3950
-NoConn ~ 7800 4150
-NoConn ~ 7800 4250
+	7700 4650 7800 4650
 Wire Wire Line
-	7700 3950 7550 3950
-Connection ~ 7700 3950
+	7700 4650 7550 4650
+Connection ~ 7700 4650
 Text Label 6700 4350 0    50   ~ 0
 CSync
-Text GLabel 7800 4450 0    50   Output ~ 0
+Text GLabel 7800 4250 0    50   Output ~ 0
 Blue
-Text GLabel 7800 4550 0    50   Output ~ 0
+Text GLabel 7800 4150 0    50   Output ~ 0
 Green
-Text GLabel 7800 4650 0    50   Output ~ 0
+Text GLabel 7800 4050 0    50   Output ~ 0
 Red
-Wire Wire Line
-	7400 4350 7800 4350
 $Comp
 L Device:R_Small R3
 U 1 1 617F445A
@@ -354,8 +346,8 @@ F 3 "~" H 7300 4350 50  0001 C CNN
 	1    7300 4350
 	0    1    1    0   
 $EndComp
-Text Notes 7300 5150 0    50   ~ 0
-Not entirely sure what the GBS \nexpects as CSync input voltage.\nThis allows provision on the board \nfor an inline resistor if needed.
+Text Notes 7500 5350 0    50   ~ 0
+Not entirely sure what the GBS \nexpects as CSync input voltage.\n0Ohm resistor allows provision \non the board for an inline \nresistor if needed.
 NoConn ~ 3550 4250
 Wire Wire Line
 	4150 4150 4750 4150
@@ -424,4 +416,16 @@ F 3 "~" H 7150 5200 50  0001 C CNN
 	1    7150 5200
 	1    0    0    -1  
 $EndComp
+NoConn ~ 7800 4450
+Wire Wire Line
+	7400 4350 7800 4350
+NoConn ~ 7800 4550
+Wire Wire Line
+	7800 3200 7800 3400
+Wire Wire Line
+	7600 3200 7800 3200
+Wire Wire Line
+	7800 3700 7800 3500
+Wire Wire Line
+	7600 3700 7800 3700
 $EndSCHEMATC
