@@ -159,11 +159,7 @@ F 3 "" H 5950 4100 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 NoConn ~ 6700 5000
-NoConn ~ 6100 5100
-NoConn ~ 6100 4900
 NoConn ~ 5800 4900
-NoConn ~ 5200 5000
-NoConn ~ 5200 4800
 Wire Wire Line
 	5950 3550 5600 3550
 Connection ~ 5950 3550
@@ -277,29 +273,25 @@ $EndComp
 $Comp
 L power:+5V #PWR0106
 U 1 1 617E835C
-P 7700 3400
-F 0 "#PWR0106" H 7700 3250 50  0001 C CNN
-F 1 "+5V" H 7715 3573 50  0000 C CNN
-F 2 "" H 7700 3400 50  0001 C CNN
-F 3 "" H 7700 3400 50  0001 C CNN
-	1    7700 3400
+P 7600 3700
+F 0 "#PWR0106" H 7600 3550 50  0001 C CNN
+F 1 "+5V" H 7615 3873 50  0000 C CNN
+F 2 "" H 7600 3700 50  0001 C CNN
+F 3 "" H 7600 3700 50  0001 C CNN
+	1    7600 3700
 	1    0    0    -1  
 $EndComp
 $Comp
 L power:GND #PWR0107
 U 1 1 617E8C2D
-P 7700 3500
-F 0 "#PWR0107" H 7700 3250 50  0001 C CNN
-F 1 "GND" H 7705 3327 50  0000 C CNN
-F 2 "" H 7700 3500 50  0001 C CNN
-F 3 "" H 7700 3500 50  0001 C CNN
-	1    7700 3500
+P 7600 3200
+F 0 "#PWR0107" H 7600 2950 50  0001 C CNN
+F 1 "GND" H 7605 3027 50  0000 C CNN
+F 2 "" H 7600 3200 50  0001 C CNN
+F 3 "" H 7600 3200 50  0001 C CNN
+	1    7600 3200
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	7800 3400 7700 3400
-Wire Wire Line
-	7800 3500 7700 3500
 $Comp
 L Connector_Generic:Conn_01x08 J3
 U 1 1 617E9E1B
@@ -344,14 +336,14 @@ L Device:R_Small R3
 U 1 1 617F445A
 P 7300 4350
 F 0 "R3" V 7104 4350 50  0000 C CNN
-F 1 "0Ohm" V 7195 4350 50  0000 C CNN
+F 1 "470Ohm" V 7195 4350 50  0000 C CNN
 F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" H 7300 4350 50  0001 C CNN
 F 3 "~" H 7300 4350 50  0001 C CNN
 	1    7300 4350
 	0    1    1    0   
 $EndComp
 Text Notes 7500 5350 0    50   ~ 0
-Not entirely sure what the GBS \nexpects as CSync input voltage.\n0Ohm resistor allows provision \non the board for an inline \nresistor if needed.
+Not entirely sure what the GBS \nexpects as CSync input voltage.\n0Ohm resistor should be a safe\ngeneral value, but can be \nadjusted if needed.
 NoConn ~ 3550 4250
 Wire Wire Line
 	4150 4150 4750 4150
@@ -424,4 +416,46 @@ NoConn ~ 7800 4450
 Wire Wire Line
 	7400 4350 7800 4350
 NoConn ~ 7800 4550
+Wire Wire Line
+	7800 3200 7800 3400
+Wire Wire Line
+	7600 3200 7800 3200
+Wire Wire Line
+	7800 3700 7800 3500
+Wire Wire Line
+	7600 3700 7800 3700
+Text Notes 4700 2200 0    50   ~ 0
+Use 74HCT86 in actual production
+$Comp
+L power:+5V #PWR?
+U 1 1 6184FF3B
+P 5050 4800
+F 0 "#PWR?" H 5050 4650 50  0001 C CNN
+F 1 "+5V" H 5065 4973 50  0000 C CNN
+F 2 "" H 5050 4800 50  0001 C CNN
+F 3 "" H 5050 4800 50  0001 C CNN
+	1    5050 4800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5200 4800 5050 4800
+Wire Wire Line
+	5200 5000 5200 4800
+Connection ~ 5200 4800
+$Comp
+L power:+5V #PWR?
+U 1 1 61854D1C
+P 5950 4900
+F 0 "#PWR?" H 5950 4750 50  0001 C CNN
+F 1 "+5V" H 5965 5073 50  0000 C CNN
+F 2 "" H 5950 4900 50  0001 C CNN
+F 3 "" H 5950 4900 50  0001 C CNN
+	1    5950 4900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6100 4900 5950 4900
+Wire Wire Line
+	6100 5100 6100 4900
+Connection ~ 6100 4900
 $EndSCHEMATC
