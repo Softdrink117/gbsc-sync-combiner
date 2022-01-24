@@ -1,0 +1,4 @@
+(fp_lib_table
+  (lib (name sft_gfx)(type KiCad)(uri ${KIPRJMOD}/lib/sft_gfx)(options "")(descr ""))
+  (lib (name board_graphics)(type KiCad)(uri ${KIPRJMOD}/lib/board_graphics.pretty)(options "")(descr ""))
+)
