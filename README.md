@@ -50,3 +50,6 @@ Cable assemblies designed to connect the Sync Combiner with the GBS-C mainboard.
 | JST XHP-2 | 2 | [Digikey](https://www.digikey.com/en/products/detail/jst-sales-america-inc/XHP-2/555485), [GAM-GEC](https://gam-gec.com/product/xhp-2/) | As above.
 | JST JUMPER SXH-001T-P0.6 X2 8" | 2 | [Digikey](https://www.digikey.com/en/products/detail/jst-sales-america-inc/ASXHSXH22K203/9961918) | Digikey often has good stock of these pre-terminated XH jumper wire assemblies.
 | JST JUMPER SXH-001T-P0.6 X2 4" | 6 | [Digikey](https://www.digikey.com/en/products/detail/jst-sales-america-inc/ASXHSXH22K102/9961917) | As above.
+
+#### Notes
+The *output side* RGB header - P12 on the single-output boards - uses JST PHR-12 (2mm pitch) and is not compatible with the XH connectors used elsewhere.
