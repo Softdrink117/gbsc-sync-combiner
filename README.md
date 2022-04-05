@@ -16,11 +16,11 @@ Due to the simple design of the circuit, basic through-hole soldering is all tha
 
 When building the (optional) cable assemblies, please take note that only six pins of the 8-pin video cable are actually used.
 
-| 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 |
+| 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 6&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
 | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
 | Red | Green | Blue | Sync | | | GND | GND |
 
-Also, please verify that the `P9` header on the GBS mainboard correctly indicates the power lines; the Sync Combiner will not function correctly if 5V and GND are reversed. This could result in damage to the Sync Combiner, the GBS mainboard, or even connected equipment in the worst case.
+Also, please verify that the `P9` header on the GBS mainboard correctly indicates the power lines; the Sync Combiner will not function correctly if 5V and GND are reversed. This could result in damage to the Sync Combiner, the GBS mainboard, or even connected equipment in the worst case. I have not yet encounted a GBS board that is marked incorrectly, but there are many variations, and I cannot guarantee that all of them will match.
 
 #### BOM
 
