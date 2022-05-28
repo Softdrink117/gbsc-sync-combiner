@@ -1,4 +1,4 @@
-19797501452118030
+19799155180137959
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -52114,6 +52114,13 @@ Footprint for generic SSD1306 0.96" OLED displays
 0
 8
 4
+GBSC_Sync_Combiner_Footprints
+Solder_Pad_2x4mm
+
+
+0
+1
+1
 Heatsink
 Heatsink_35x26mm_1xFixation3mm_Fischer-SK486-35
 Heatsink, 35mm x 26mm, 1x Fixation 3mm, Fischer SK486-35

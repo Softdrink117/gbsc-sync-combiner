@@ -40,7 +40,7 @@
       )
     )
   )
-  (symbol "Solder_Pad_2x4mm" (in_bom yes) (on_board yes)
+  (symbol "Solder_Pad_2x4mm" (pin_numbers hide) (in_bom yes) (on_board yes)
     (property "Reference" "J" (id 0) (at 3.81 1.27 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
@@ -62,7 +62,7 @@
     (symbol "Solder_Pad_2x4mm_1_1"
       (pin unspecified line (at -5.08 0 0) (length 2.54)
         (name "" (effects (font (size 1.27 1.27))))
-        (number "" (effects (font (size 1.27 1.27))))
+        (number "1" (effects (font (size 1.27 1.27))))
       )
     )
   )
