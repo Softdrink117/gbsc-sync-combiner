@@ -21,6 +21,7 @@ Design by Tobias Heinemann / Softdrink 117 c. Jan 2022
   - [Headers](#Headers)
   - [Cable Assemblies](Cable-Assemblies)
 - [Miscellaneous Notes](#Miscellaneous-Notes)
+- [Acknowledgements](#Acknowledgements)
 
 ## Overview
 
@@ -100,3 +101,12 @@ Cable assemblies designed to connect the Sync Combiner with the GBS-C mainboard.
 
 #### Miscellaneous Notes
 The *output side* RGB header - P12 on the single-output boards - uses JST PHR-12 (2mm pitch). The other headers on the board are mostly JST XH.
+
+-----
+
+### Acknowledgements
+
+This project would not have been possible without the help of the following people:
+
+- ["Hatsune" Mike](https://github.com/Mikejmoffitt)
+- [Thomas Daede](https://github.com/tdaede)
