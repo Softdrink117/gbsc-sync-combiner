@@ -4,11 +4,26 @@ Design by Tobias Heinemann / Softdrink 117 c. Jan 2022
 
 -----
 
+![Render of the PCB, from KiCAD's 3D viewer](./gbsc-sync-combiner-v1-3/images/gbsc-sync-combiner-v1-3.png)
+![Image of the PCB layout, including dimensions](./gbsc-sync-combiner-v1-3/images/gbsc-sync-combiner-v1-3_back.png)
+
+## Contents
+
+- [Overview](#Overview)
+- [Assembly](#Assembly)
+- [BOM](#BOM)
+  - [Required Components](#Required_Components)
+  - [Headers](#Headers)
+  - [Cable Assemblies](Cable_Assemblies)
+- [Miscellaneous Notes](#Miscellaneous_Notes)
+
 ## Overview
 
  A simple sync combiner designed to convert RGBHV (VGA) into RGBS. Specifically built to be used with the GBS-Control project, which has some notable issues with RGBHV input under some circumstances (downscaling, etc.).
 
  The circuit is extremely straightforward, using only a single logic IC and three resistors. The headers (`J2` and `J3`) are actually optional, and only included so that the module is plug-and-play compatible with the existing headers on the GBS board (`P9` and `P11`, respectively).
+
+ > **Note:** There is a small solder jumper preconfigured in the closed position that links the Shield of the VGA connector to ground. In the overwhelming majority of cases, this should be fine to keep closed; however, in some situations coupling the shield to ground can cause issues with interference. If you experience such an issue, you can cut the jumper open if necessary.
 
 #### Assembly
 
@@ -34,7 +49,7 @@ Also, please verify that the `P9` header on the GBS mainboard correctly indicate
 | C1 | 0.1uF Capacitor | 1 | [Digikey](https://www.digikey.com/en/products/detail/vishay-beyschlag-draloric-bc-components/K104K15X7RF5TL2/286538) | Pretty much any 0.1uF decoupling capacitor with 2.5mm through-hole leads will work.
 
 ##### Headers
-Optional, but allows the sync combiner to work as a plug-and-play add-on with corresponding cables. Omitting the headers will require direct soldering between the Sync Combiner and the GBS-C mainboard.
+Optional, but allows the sync combiner to work as a plug-and-play add-on with corresponding cables. Omitting the headers will require directly soldering wires between the Sync Combiner and the GBS-C mainboard.
 
 | Part | Name | Quantity | Link | Notes |
 | ---: | :--: | :------: | :----------- | :---- |
@@ -42,7 +57,7 @@ Optional, but allows the sync combiner to work as a plug-and-play add-on with co
 | J2 | JST B2B-XH-A | 1 | [Digikey](https://www.digikey.com/en/products/detail/jst-sales-america-inc/B2B-XH-A-LF-SN/1651045), [GAM-GEC](https://gam-gec.com/product/b2b-xh-a/) | As above.
 
 ##### Cable Assemblies
-Cable assemblies designed to connect the Sync Combiner with the GBS-C mainboard. These specific parts will give you an 8" (203mm) cable for power, and a 4" (101mm) cable for video signals. Depending on your desired install location, you may want to choose a different cable length; [there are several options available in 2" increments between 2 and 12 inches](https://www.digikey.com/en/product-highlight/j/jst/xh-series-connectors).
+Cable assemblies designed to connect the Sync Combiner with the GBS-C mainboard. These specific parts will give you an 8" (200mm) cable for power, and a 4" (100mm) cable for video signals. Depending on your desired install location, you may want to choose a different cable length; [there are several options available in 2" increments between 2 and 12 inches](https://www.digikey.com/en/product-highlight/j/jst/xh-series-connectors).
 
 | Part | Quantity | Link | Notes |
 | ---: | :------: | :----------- | :---- |
@@ -51,5 +66,5 @@ Cable assemblies designed to connect the Sync Combiner with the GBS-C mainboard.
 | JST JUMPER SXH-001T-P0.6 X2 8" | 2 | [Digikey](https://www.digikey.com/en/products/detail/jst-sales-america-inc/ASXHSXH22K203/9961918) | Digikey often has good stock of these pre-terminated XH jumper wire assemblies.
 | JST JUMPER SXH-001T-P0.6 X2 4" | 6 | [Digikey](https://www.digikey.com/en/products/detail/jst-sales-america-inc/ASXHSXH22K102/9961917) | As above.
 
-#### Notes
-The *output side* RGB header - P12 on the single-output boards - uses JST PHR-12 (2mm pitch) and is not compatible with the XH connectors used elsewhere.
+#### Miscellaneous Notes
+The *output side* RGB header - P12 on the single-output boards - uses JST PHR-12 (2mm pitch). The other headers on the board are mostly JST XH.
