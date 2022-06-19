@@ -13,6 +13,8 @@ Design by Tobias Heinemann / Softdrink 117 c. Jan 2022
 ## Contents
 
 - [Overview](#Overview)
+- [Circuit Design](#Circuit-Design)
+- [Board Design](#Board-Design)
 - [Assembly](#Assembly)
 - [BOM](#BOM)
   - [Required Components](#Required-Components)
