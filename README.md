@@ -27,7 +27,7 @@ Design by Tobias Heinemann / Softdrink 117 c. Jan 2022
 
  A simple sync combiner designed to convert RGBHV (VGA) into RGBS. Specifically built to be used with the GBS-Control project, which has some notable issues with RGBHV input under some circumstances (downscaling, etc.).
 
- The circuit is straightforward, using only a single logic IC and three resistors. The headers (`J2` and `J3`) are actually optional, and only included so that the module is plug-and-play compatible with the existing headers on the GBS board (`P9` and `P11`, respectively).
+ The circuit is straightforward, using only a single logic IC and three resistors. The headers (`J2` and `J3`) are actually optional, and only included so that the module is plug-and-play compatible with the existing headers on the GBS board (`P9` and `P11`, respectively). If you wish, you can omit installation of the headers and solder wires directly between the Sync Combiner board and the GBS mainboard.
 
 ### Circuit Design
 
@@ -38,6 +38,7 @@ For a more in-depth explanation of this circuit, [there's a great blog post from
 ### Board Design
 
 ![Image of the PCB layout, including dimensions.](./gbsc-sync-combiner-v1-3/images/gbsc-sync-combiner-v1-3_back.png)
+
 *Exported diagram from KiCAD's PCB editor, showing board dimensions and layout.*
 
 The board is designed to be extremely simple. It is capable of being fabricated with a single-sided process, and measures 47mm x 33mm, with M3 mounting holes in a 25mm x 39mm pattern.
@@ -65,10 +66,10 @@ Also, please verify that the `P9` header on the GBS mainboard correctly indicate
 *First step of assembly: resistors and decoupling capacitor.*
 
 ![The second step of assembly: IC and headers](./gbsc-sync-combiner-v1-3/photos/s2.jpg)
-*Second step of assembly: IC installation.*
+*Second step of assembly: IC and headers.*
 
 ![The third step of assembly: VGA connector.](./gbsc-sync-combiner-v1-3/photos/s3.jpg)
-*Final step of assembly: VGA connector.*
+*Final step of assembly: VGA connector. Note that there is flux residue visible in this picture, which must be cleaned before use.*
 
 ### BOM
 
